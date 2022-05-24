@@ -1,0 +1,34 @@
+﻿@page
+@model Meum.Pages.Lager.CreateLagerModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <label>Vare Nummer</label>
+        <input type="text" class="form-control" asp-for="@Model.Lager.VareNummer" placeholder="Vare Nummer">
+    </div>
+
+    <div class="form-group">
+        <label>Lager Navn</label>
+        <input type="text" asp-for="@Model.Lager.Navn" class="form-control" placeholder="Lager Navn">
+    </div>
+    <div class="form-group">
+        <label>Beskrivelse</label>
+        <input type="text" asp-for="@Model.Lager.Beskrivelse" class="form-control" placeholder="Beskrivelse">
+    </div>
+    <div class="form-group">
+        <label>Antal</label>
+        <input type="text" asp-for="@Model.Lager.Antal" class="form-control" placeholder="Antal">
+    </div>
+
+
+    <div class="form-group">
+        <a asp-page="/Lager/Lager">
+            <input type="submit" value="Opret Produkt" class="btn btn-primary" />
+        </a>
+
+        <a asp-page="/Lager/Lager" class="btn-link">
+            <input  value="Tilbage" class="btn btn-primary" />
+        </a>
+    </div>
+</form>

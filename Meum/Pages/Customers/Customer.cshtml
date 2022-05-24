@@ -1,0 +1,44 @@
+﻿@page
+@model Meum.Pages.Customers.CustomerModel
+@{
+}
+
+<div>
+    <a class="btn btn-lg" type="button" style="margin-left: 480px;" asp-page="/Customers/CreateCustomer">Create Customer</a>
+</div>
+<table class="table table-striped" style="margin-top: 50px;">
+    <thead>
+        <tr>
+            <th scope="col">Fornavn</th>
+            <th scope="col">Efternavn</th>
+            <th scope="col">Addresse</th>
+            <th scope="col">TelefonNr</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">AbonnomentNr</th>
+            <th scope="col">Nyhedsbrev</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in @Model.Kunder)
+        {
+        <tr>
+            <th scope="row">@item.ForNavn</th>
+            <td>@item.EfterNavn</td>
+            <td>@item.Addresse</td>
+            <td>@item.TelefonNr</td>
+            <td>@item.EMail</td>
+            <td>@item.AbonnomentNr</td>
+            <td>@item.Nyhedsbrev</td>
+            <td>
+                <a class="btn" type="button" asp-page="EditCustomer" asp-route-id="@item.Id">Rediger</a>
+            </td>
+            <td>
+                <a class="btn" type="button" asp-page="DeleteCustomer" asp-route-id="@item.Id">Slet</a>
+            </td>
+
+        </tr>
+        }
+
+    </tbody>
+</table>

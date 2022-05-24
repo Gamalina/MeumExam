@@ -1,0 +1,39 @@
+﻿@page
+@model Meum.Pages.Salg.SalgListeModel
+@{
+}
+
+<div>
+    <a class="btn btn-lg" type="button" style="margin-left: 480px;" asp-page="/Salg/CreateSalg">Create new Sale</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Varenummer</th>
+            <th scope="col">Antal</th>
+            <th scope="col">Date</th>
+            <th scope="col">Shipped</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in @Model.Salgs)
+        {
+            <tr>
+                <th scope="row">@item.VareNummer</th>
+                <td>@item.Antal</td>
+                <td>@item.DateTime</td>
+                <td>@item.Shipped</td>
+                <td>
+                    <a class="btn" type="button" asp-page="EditSalg" asp-route-id="@item.Id">Rediger</a>
+                </td>
+                <td>
+                    <a class="btn" type="button" asp-page="DeleteSalg" asp-route-id="@item.Id">Slet</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

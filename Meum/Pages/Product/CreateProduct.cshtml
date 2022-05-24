@@ -1,0 +1,39 @@
+﻿@page 
+@model Meum.Pages.Product.CreateProductModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+            <label>Produkt Navn</label>
+            <input type="text" class="form-control" asp-for="@Model.Produkt.ProduktNavn" placeholder="Produkt navn" required>
+        </div>
+
+    <div class="form-group">
+        <label>Vare Nummer</label>
+        <input type="text" asp-for="@Model.Produkt.VareNummer" class="form-control" placeholder="Vare nummer" required>
+    </div>
+    <div class="form-group">
+        <label>Produkt Pris</label>
+        <input type="text" asp-for="@Model.Produkt.Pris" class="form-control" placeholder="Produkt pris" required>
+    </div>
+    <div class="form-group">
+        <label>Beskrivelse</label>
+        <input type="text" asp-for="@Model.Produkt.Beskrivelse" class="form-control" placeholder="Beskrivelse" required>
+    </div>
+
+    <div class="form-group">
+        <label>Billede Navn</label>
+        <input type="text" asp-for="@Model.Produkt.Image" class="form-control" placeholder="Billede Navn" required>
+    </div>
+
+    <div class="form-group">
+        <a asp-page="/Product/Products">
+            <input type="submit" value="Opret Produkt" class="btn btn-primary" />
+        </a>
+        
+        <a asp-page="/Product/Products" class="btn-link">
+            <input value="Tilbage" class="btn btn-primary"/>
+        </a>
+    </div>
+</form>

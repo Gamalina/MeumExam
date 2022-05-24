@@ -1,0 +1,55 @@
+﻿@page "{id:int}"
+@model Meum.Pages.Customers.EditCustomerModel
+@{
+}
+
+<h1>Opdatere en kunde</h1>
+
+@if (!string.IsNullOrWhiteSpace(@Model.ErrorMessage))
+{
+    <h2 class="alert-danger">@Model.ErrorMessage</h2>
+}
+
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label>Fornavn</label>
+                    <input type="text" asp-for="@Model.kunde.ForNavn" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Efternavn</label>
+                    <input type="text" asp-for="@Model.kunde.EfterNavn" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>TelefonNr</label>
+                    <input type="text" asp-for="@Model.kunde.TelefonNr" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" asp-for="@Model.kunde.EMail" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Addresse</label>
+                    <input type="text" asp-for="@Model.kunde.Addresse" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>AbonnomentNr</label>
+                    <input type="text" asp-for="@Model.kunde.AbonnomentNr" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label>Nyhedsbrev</label>
+                    <input type="text" asp-for="@Model.kunde.Nyhedsbrev" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Opdater Kunde" class="btn btn-primary" />
+                    <a asp-page="/Customers/Customer" class="btn-link">
+                        <input value="Tilbage" class="btn btn-primary" />
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+}

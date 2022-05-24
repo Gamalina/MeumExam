@@ -1,0 +1,29 @@
+﻿@page
+@model Meum.Pages.Product.ProductsModel
+@{
+}
+<div>
+    <a class="btn btn-lg" type="button" style="margin-left: 480px;" asp-page="/Product/CreateProduct">Create Product</a>
+</div>
+
+<div class="row" style="margin-top: 50px;">
+    @foreach (var item in Model.Produkts)
+    {
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProduktNavn Nr. @item.VareNummer</h5>
+                    <p class="card-text">@item.Beskrivelse</p>
+
+                    <p class="card-text">Pris: @item.Pris,-</p>
+
+                    <a class="btn" type="button" asp-page="EditProduct" asp-route-id="@item.Id">Rediger</a>
+                    <a class="btn" type="button" asp-page="DeleteProduct" asp-route-id="@item.Id">Slet</a>
+                </div>
+            </div>
+        </div>
+
+        <br />
+    }
+</div>

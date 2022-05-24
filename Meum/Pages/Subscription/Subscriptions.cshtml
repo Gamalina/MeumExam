@@ -1,0 +1,30 @@
+﻿@page
+@model Meum.Pages.Subcription.SubscriptionsModel
+@{
+}
+<div>
+    <a class="btn btn-lg" type="button" style="margin-left: 480px;" asp-page="/Subscription/CreateSubscription">Create Subscription</a>
+</div>
+
+<div class="row" style="margin-top: 50px;">
+    @foreach (var item in Model.Abonnoments)
+    {
+
+        <div class="col-sm-6" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.AbonnomentNavn Nr. @item.AbonnomentNr</h5>
+                    <p class="card-text">@item.Beskrivelse</p>
+
+                    <p class="card-text">Pris: @item.Pris,-</p>
+                    <p class="card-text">Måneder: @item.Løbetid</p>
+
+                    <a class="btn" type="button" asp-page="EditSubscription" asp-route-id="@item.Id">Rediger</a>
+                    <a class="btn" type="button" asp-page="DeleteSubscription" asp-route-id="@item.Id">Slet</a>
+                </div>
+            </div>
+        </div>
+
+        <br />
+    }
+</div>

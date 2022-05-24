@@ -1,0 +1,35 @@
+﻿@page
+@model Meum.Pages.Salg.CreateSalgModel
+@{
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <label>Vare Nummer</label>
+        <input type="text" class="form-control" asp-for="@Model.Salg.VareNummer" placeholder="Produkt navn" required>
+    </div>
+
+    <div class="form-group">
+        <label>Antal</label>
+        <input type="text" asp-for="@Model.Salg.Antal" class="form-control" placeholder="Vare nummer" required>
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" asp-for="@Model.Salg.DateTime" class="form-control" value="06/14/2022" required>
+    </div>
+    <div class="form-group">
+        <label>Shipped</label>
+        <input type="text" asp-for="@Model.Salg.Shipped" class="form-control" placeholder="Beskrivelse" required>
+    </div>
+
+    <div class="form-group">
+        <a asp-page="/Salg/SalgListe">
+            <input type="submit" value="Opret Produkt" class="btn btn-primary" />
+        </a>
+        
+        <a asp-page="/Salg/SalgListe" class="btn-link">
+            <input value="Tilbage" class="btn btn-primary"/>
+        </a>
+    </div>
+</form>

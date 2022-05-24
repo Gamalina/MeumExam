@@ -1,0 +1,41 @@
+﻿@page
+@model Meum.Pages.Lager.LagerModel
+@{
+}
+<div>
+    <a class="btn btn-lg" type="button" style="margin-left: 480px;" asp-page="/Lager/CreateLager">Create new item</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Nr.</th>
+        <th scope="col">Navn</th>
+        <th scope="col">Beskrivelse</th>
+        <th scope="col">Antal</th>
+    </tr>
+    </thead>
+    <tbody>    
+    
+    @foreach (var item in @Model.Lagers)
+    {
+        <tr>
+            <th scope="row">@item.VareNummer</th>
+            <td>@item.Navn</td>
+            <td>@item.Beskrivelse</td>
+            <td>@item.Antal</td>
+            <td>
+                <a class="btn" type="button" asp-page="UpdateLager" asp-route-id="@item.Id">Rediger</a>
+            </td>
+            <td>
+                <a class="btn" type="button" asp-page="DeleteLager" asp-route-id="@item.Id">Slet</a>
+            </td>
+
+        </tr>
+    }
+    
+    </tbody>
+</table>
+
+
+<p>@Model.Lagers[0].Antal</p>

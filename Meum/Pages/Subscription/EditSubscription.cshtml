@@ -1,0 +1,46 @@
+﻿@page "{id:int}"
+@model Meum.Pages.Subscription.EditSubscriptionModel
+@{
+}
+<h1>Opdatere et Abonnoment</h1>
+
+@if (!string.IsNullOrWhiteSpace(@Model.ErrorMessage))
+{
+    <h2 class="alert-danger">@Model.ErrorMessage</h2>
+}
+
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label>Abonnoment Nr</label>
+                    <input type="text" asp-for="@Model.Abonnoment.AbonnomentNr" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Abonnoment navn</label>
+                    <input type="text" asp-for="@Model.Abonnoment.AbonnomentNavn" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Beskrivelse</label>
+                    <input type="text" asp-for="@Model.Abonnoment.Beskrivelse" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Pris</label>
+                    <input type="text" asp-for="@Model.Abonnoment.Pris" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Løbetid</label>
+                    <input type="text" asp-for="@Model.Abonnoment.Løbetid" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Opdater Abonnoment" class="btn btn-primary" />
+                    <a asp-page="/Subscription/Subscriptions" class="btn-link">
+                        <input  value="Tilbage" class="btn btn-primary" />
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+}

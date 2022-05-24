@@ -1,0 +1,39 @@
+﻿@page
+@model Meum.Pages.Subscription.CreateSubscriptionModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>Abonnoment Nummer</label>
+        <input type="text" class="form-control" asp-for="@Model.Abonnoment.AbonnomentNr" placeholder="Abonnoment Nummer">
+    </div>
+
+    <div class="form-group">
+        <label>Abonnoment Navn</label>
+        <input type="text" asp-for="@Model.Abonnoment.AbonnomentNavn" class="form-control" placeholder="Abonnoment Navn">
+    </div>
+    <div class="form-group">
+        <label>Pris</label>
+        <input type="text" asp-for="@Model.Abonnoment.Pris" class="form-control" placeholder="Abonnement pris">
+    </div>
+    <div class="form-group">
+        <label>Beskrivelse</label>
+        <input type="text" asp-for="@Model.Abonnoment.Beskrivelse" class="form-control" placeholder="Beskrivelse">
+    </div>
+
+    <div class="form-group">
+        <label>Løbe tid</label>
+        <input type="text" asp-for="@Model.Abonnoment.Løbetid" class="form-control" placeholder="Billede Navn">
+    </div>
+
+    <div class="form-group">
+        <a asp-page="/Product/Products">
+            <input type="submit" value="Opret Produkt" class="btn btn-primary" />
+        </a>
+        
+        <a asp-page="/Subscription/Subscriptions" class="btn-link">
+            <input  value="Tilbage" class="btn btn-primary"/>
+        </a>
+    </div>
+</form>

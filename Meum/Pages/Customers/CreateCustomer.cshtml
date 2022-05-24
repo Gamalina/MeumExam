@@ -1,0 +1,42 @@
+﻿@page
+@model Meum.Pages.Customers.CreateCustomerModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>Fornavn</label>
+        <input type="text" class="form-control" asp-for="@Model.kunde.ForNavn" placeholder="Fornavn" required>
+    </div>
+
+    <div class="form-group">
+        <label>Efternavn</label>
+        <input type="text" asp-for="@Model.kunde.EfterNavn" class="form-control" placeholder="Efternavn" required>
+    </div>
+    <div class="form-group">
+        <label>Telefon nummer</label>
+        <input type="number" asp-for="@Model.kunde.TelefonNr" class="form-control" placeholder="Telefon nummer" required>
+    </div>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input type="text" asp-for="@Model.kunde.EMail" class="form-control" placeholder="E-mail" required>
+    </div>
+    <div class="form-group">
+        <label>Addresse</label>
+        <input type="text" asp-for="@Model.kunde.Addresse" class="form-control" placeholder="Addresse" required>
+    </div>
+    <div class="form-group">
+        <label>AbonnomentNr</label>
+        <input type="text" asp-for="@Model.kunde.AbonnomentNr" class="form-control" placeholder="Abonnoment Nummer" required>
+    </div>
+
+    <div class="form-group">
+        <a asp-page="/Customers/Customer">
+            <input type="submit" value="Opret Produkt" class="btn btn-primary" />
+        </a>
+
+        <a asp-page="/Customers/Customer" class="btn-link">
+            <input  value="Tilbage" class="btn btn-primary" />
+        </a>
+    </div>
+</form>
